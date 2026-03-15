@@ -1,52 +1,70 @@
 body{
-margin:0;
-background:#111;
-color:white;
-font-family:Arial;
-text-align:center;
+  margin:0;
+  background: radial-gradient(circle, #1a0000, black);
+  color:white;
+  font-family: 'Arial', sans-serif;
+  text-align:center;
 }
 
-header{
-background:#000;
-padding:20px;
-border-bottom:3px solid gold;
+.title{
+  font-size:50px;
+  color:gold;
+  text-shadow:0 0 15px gold, 0 0 30px orange;
+  margin-top:30px;
 }
 
-.logo{
-color:gold;
-font-size:50px;
-letter-spacing:4px;
+.balance{
+  font-size:25px;
+  margin:20px;
 }
 
-.container{
-margin-top:100px;
+.slot-machine{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:50px;
+  height:300px;
 }
 
-h2{
-font-size:40px;
-margin-bottom:10px;
+.reel{
+  width:100px;
+  height:300px;
+  overflow:hidden;
+  border:4px solid gold;
+  border-radius:10px;
+  background:#0b0b0b;
+  box-shadow:0 0 20px gold;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  transition: transform 1s ease-out;
 }
 
-.menu{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:40px;
+.reel img{
+  width:90px;
+  margin:5px 0;
 }
 
-.game{
-background:#222;
-border:2px solid gold;
-color:white;
-font-size:25px;
-padding:20px 50px;
-border-radius:10px;
-cursor:pointer;
-transition:0.3s;
+.spin{
+  font-size:30px;
+  padding:20px 60px;
+  margin-top:30px;
+  background:red;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 0 20px red;
+  transition:0.3s;
 }
 
-.game:hover{
-background:gold;
-color:black;
-transform:scale(1.1);
+.spin:hover{
+  background:orange;
+}
+
+#result{
+  font-size:30px;
+  margin-top:20px;
+  color:gold;
+  text-shadow:0 0 10px gold;
 }
