@@ -1,45 +1,43 @@
-let symbols = ["🍒","🍋","⭐","💎","7️⃣"];
-
+const symbols = ["📖","💀","🗿","👑","🦅"]; // simboli egizi
 let balance = 100;
 
 function spin(){
+  if(balance <=0){
+    alert("Saldo finito");
+    return;
+  }
 
-if(balance <=0){
-alert("Saldo finito");
-return;
-}
+  balance -= 1;
+  document.getElementById("balance").innerText = balance;
 
-balance -=1;
-document.getElementById("balance").innerText = balance;
+  let reels = [
+    document.getElementById("reel1"),
+    document.getElementById("reel2"),
+    document.getElementById("reel3")
+  ];
 
-let r1 = randomSymbol();
-let r2 = randomSymbol();
-let r3 = randomSymbol();
+  // animazione rulli
+  reels.forEach(reel => {
+    reel.innerHTML = "";
+    for(let i=0;i<3;i++){
+      let s = symbols[Math.floor(Math.random()*symbols.length)];
+      let span = document.createElement("div");
+      span.innerText = s;
+      reel.appendChild(span);
+    }
+  });
 
-document.getElementById("reel1").innerHTML = r1;
-document.getElementById("reel2").innerHTML = r2;
-document.getElementById("reel3").innerHTML = r3;
+  // risultato semplice: linea centrale
+  let midSymbols = reels.map(r=>r.children[1].innerText);
 
-if(r1==r2 && r2==r3){
-
-let win = 10;
-
-balance += win;
-
-document.getElementById("balance").innerText = balance;
-
-document.getElementById("result").innerHTML = "💰 JACKPOT +€"+win;
-
-}else{
-
-document.getElementById("result").innerHTML = "Riprova";
-
-}
-
-}
-
-function randomSymbol(){
-
-return symbols[Math.floor(Math.random()*symbols.length)];
-
+  setTimeout(()=>{
+    if(midSymbols[0]===midSymbols[1] && midSymbols[1]===midSymbols[2]){
+      let win = 10;
+      balance += win;
+      document.getElementById("balance").innerText = balance;
+      document.getElementById("result").innerHTML = `💰 JACKPOT +€${win} - ${midSymbols[0]}!`;
+    }else{
+      document.getElementById("result").innerHTML = "Riprova!";
+    }
+  },500);
 }
