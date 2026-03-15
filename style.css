@@ -1,61 +1,52 @@
 body{
 margin:0;
-background: radial-gradient(circle, #1a0000, black);
-font-family: 'Bebas Neue', sans-serif;
+background:#111;
 color:white;
+font-family:Arial;
 text-align:center;
 }
 
-.container{
-margin-top:120px;
+header{
+background:#000;
+padding:20px;
+border-bottom:3px solid gold;
 }
 
-.title{
-font-size:80px;
+.logo{
 color:gold;
-text-shadow:
-0 0 10px gold,
-0 0 20px orange,
-0 0 40px red;
+font-size:50px;
+letter-spacing:4px;
 }
 
-.subtitle{
-font-size:30px;
-margin-bottom:60px;
+.container{
+margin-top:100px;
+}
+
+h2{
+font-size:40px;
+margin-bottom:10px;
 }
 
 .menu{
 display:flex;
 justify-content:center;
 gap:40px;
+margin-top:40px;
 }
 
 .game{
-padding:25px 50px;
-font-size:30px;
-border:none;
-border-radius:15px;
+background:#222;
+border:2px solid gold;
+color:white;
+font-size:25px;
+padding:20px 50px;
+border-radius:10px;
 cursor:pointer;
 transition:0.3s;
-color:white;
-}
-
-.slot{
-background:red;
-box-shadow:0 0 20px red;
-}
-
-.blackjack{
-background:green;
-box-shadow:0 0 20px lime;
-}
-
-.poker{
-background:purple;
-box-shadow:0 0 20px violet;
 }
 
 .game:hover{
+background:gold;
+color:black;
 transform:scale(1.1);
-box-shadow:0 0 40px white;
 }
